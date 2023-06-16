@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>TaskSync</title>
+ <link href="styles.css" rel="stylesheet">
+ <script src="register.js" type="module" defer></script>
+ <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+<div class="navigation">
+ <nav>
+  <img src="logo.png" alt="TaskSync logo" id="logo">
+  <a href="index.html"><button class="btn">Sign In</button></a>
+ </nav>
+</div>
+
+<div class="container">
+ <div class="text">
+  <h3>Achieve Your Daily Goals With TaskSync.</h3>
+  <p>
+   Unlock your full potential and take control of your day with TaskSync: the all-in-one productivity solution that empowers you to accomplish more than ever before. Say goodbye to scattered tasks and hello to streamlined success. 
+  </p>
+ </div>
+
+ <div class="form">
+  <h3>Register</h3>
+  <form action="#">
+   <label for="username">
+    <input type="text" placeholder="Username" id="username">
+   </label>
+   <label for="email">
+    <input type="email" placeholder="Enter Your Email" id="email" required>
+   </label>
+   <label for="password">
+    <input type="password" placeholder="Password" id="password" required>
+   </label>
+   <label for="confirm">
+    <input type="password" placeholder="Confirm password" id="confirm">
+   </label>
+   <input type="submit" id="signUp">
+   <div id="error"></div>
+  </form>
+ </div>
+</div>
+
+
+</body>
+</html>

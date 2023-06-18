@@ -1,5 +1,5 @@
 {"name":"Task Sync",
 "short_name":"Task Sync",
 "icons":[{"src":"/android-chrome-192x192.png","sizes":"192x192","type":"image/png"},{"src":"/android-chrome-512x512.png","sizes":"512x512","type":"image/png"}],
-"theme_color":"green",
+"theme_color":"#008000",
 "background_color":"#ffffff","display":"standalone"}

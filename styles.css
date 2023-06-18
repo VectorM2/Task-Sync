@@ -21,7 +21,7 @@ nav img {
 }
 
 .btn {
- background-color: green;
+ background-color: #1fc063;
  color: white;
  font-size: 1.3rem;
  border: none;
@@ -50,7 +50,7 @@ h3 {
 }
 
 .form h3 {
- border-bottom: green 0.2rem solid;
+ border-bottom: #1fc063 0.2rem solid;
 }
 
 form input {
@@ -65,14 +65,14 @@ form input {
 }
 
 form input[type=submit] {
- background-color: green;
+ background-color: #1fc063;
  color: white;
  height: 3rem;
  font-weight: 700;
 }
 
 form input[type=submit]:hover {
- background-color: rgb(9, 90, 9);
+ background-color: #118b44cf;
  cursor: pointer;
 }
 
@@ -84,7 +84,7 @@ form input[type=submit]:active {
  margin-bottom: 0.8rem;
 }
 .btn:hover {
- background-color: rgb(6, 92, 6);
+ background-color: #118b44cf;
 }
 
 .btn:active {
@@ -112,14 +112,17 @@ form input[type=submit]:active {
 }
 
 #tasks li {
- background-color: rgb(156, 255, 180);
+ background-color: #bd7325;
  border-radius: 0.4rem;
  padding: 0.5rem;
+ font-family: fantasy;
+ font-weight: lighter;
+ color: white;
  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.25);
 }
 
 #tasks li:hover {
- background-color: rgba(45, 126, 45, 0.831);
+ background-color: #118b44cf;
  color: white;
  cursor: pointer;
 }
@@ -183,8 +186,6 @@ form input[type=submit] {
    width: 100%;
  }
  #delete {
-  display: flex;
-  justify-content: center;
   margin:auto;
 }
 }

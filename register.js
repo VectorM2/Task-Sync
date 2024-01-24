@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import {
   getAuth,
-  createUserWithEmailAndPassword,endEmailVerification 
+  createUserWithEmailAndPassword,sendEmailVerification 
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -39,13 +39,13 @@ signUp.addEventListener("click", function (event) {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        alert("Account Created..")
+        errorAlert.innerHTML = "Account Created..";
         window.location.href = "/dashboard.html";
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        const errorAlert = document.getElementById("error");
+        const errorAlert = document.getElementById("logError");
         errorAlert.innerHTML = errorMessage;
       });
   }

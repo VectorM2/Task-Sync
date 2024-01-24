@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +8,89 @@
  <link href="styles.css" rel="stylesheet">
  <script src="auth.js" type="module"></script>
  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+ <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+ <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+ <link rel="manifest" href="/site.webmanifest">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script defer src="stuff.js"></script>
 </head>
+
 <body>
-<div class="navigation">
- <nav>
-  <a href="https://youtube.com/vectorm/" target="_blank" title="
-  Check Out My Youtube"> <img src="logo.png" alt="TaskSync logo" id="logo"></a>
-  <a href="signup.html"><button class="btn" >Sign Up</button></a>
+
+ <nav class="navbar navbar-light bg-light ">
+  <div class="container-fluid container">
+   <img src="logo.png" alt="TaskSync logo" id="logo" class="navbar-brand" width="200px">
+   <a href="signup.html">
+    <button class="btn btn-outline-success">Sign Up</button>
+   </a>
+  </div>
  </nav>
-</div>
 
-<div class="container">
- <div class="text">
-  <h3>Achieve Your Daily Goals With TaskSync.</h3>
-  <p>
-   Unlock your full potential and take control of your day with TaskSync: the all-in-one productivity solution that empowers you to accomplish more than ever before. Say goodbye to scattered tasks and hello to streamlined success.
-  </p>
+ <div class="container">
+
+  <div class="text-center py-4">
+   <div class="text">
+    <h1>Achieve your daily goals now!</h1>
+    <p>
+     Enhance your daily productivity and seize control of your day with TaskSync: the comprehensive solution that empowers you to achieve more than ever before. Bid farewell to scattered tasks and welcome streamlined success.With TaskSync, achieving more has never been so accessible – empower yourself to conquer each day with confidence and purpose.
+    </p>
+   </div>
+  </div>
+
+  
+  <div class="container py-3">
+   <div class="row">
+    <div class="col-lg-6 border-raduius-5" id="image">
+     
+    </div>
+
+    <div class="col-lg-6">
+     <div class="form">
+      <h2>Log in</h2>
+      <form>
+       <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" required>
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+       </div>
+       <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" required>
+       </div>
+       <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="remeber-check">
+        <label class="form-check-label" for="check-1">Remeber me?</label>
+       </div>
+       <button type="submit" class="btn btn-primary btn-success" id="signIn">Login</button>
+       <div class="my-2">
+        <a href="#" id="reset">Forgot Password?</a>
+    </div>
+       <div  id="logError" class="my-2"></div>
+
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+
+
+
  </div>
 
- <div class="form">
-  <h3>Login</h3>
-  <form action="#">
-   <label for="email">
-    <input type="email" placeholder="Enter Your Email" id="email" required>
-   </label>
-   <label for="password">
-    <input type="password" placeholder="Password" id="password" required>
-   </label>
-   <input type="submit" id="signIn">
-   <div id="logError"></div>
-  </form>
- </div>
-</div>
+  <!--footer-->
+  <footer class="footer mt-auto py-3 bg-light shadow-sm buttom ">
+   <div class="container">
+     <span class="text-muted">All rights reserved | Copyrights &copy; TaskSync</span>
+   </div>
+ </footer>
 
 </body>
+
 </html>
+

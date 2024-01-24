@@ -1,191 +1,22 @@
 body {
- font-family: "Poppins", sans-serif;
- font-size: 1.2rem;
- box-sizing: border-box;
- min-height: 100vh; 
- width: 100%;
- margin: 0; 
- padding: 0; 
-}
-
-.navigation nav {
- display: flex;
- margin: auto;
- padding: 1.5rem;
- justify-content: space-between;
- max-width: 110rem;
-}
-
-nav img {
- height: 3rem;
-}
-
-.btn {
- background-color: #1fc063;
- color: white;
- font-size: 1.3rem;
- border: none;
- outline: none;
- border-radius: 0.4rem;
- width: 8rem;
- font-weight: 700;
- height: 3rem;
+  font-family: 'Rubik', sans-serif !important;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: none;
+  height: 100vh;
 }
 
 .container {
- display: block;
- max-width: 110rem;
- margin: auto;
- justify-content: space-around;
- padding: 2rem;
+  max-width: 800px;
 }
 
-.text h3,
-p {
- text-align: center;
+#image {
+  background-image: url("https://images.pexels.com/photos/9017620/pexels-photo-9017620.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
 }
 
-h3 {
- font-size: 2.5rem;
-}
-
-.form h3 {
- border-bottom: #1fc063 0.2rem solid;
-}
-
-form input {
- width: 100%;
- height: 3rem;
- font-size: 1.2rem;
- border: none;
- outline: none;
- background-color: rgb(185, 185, 185);
- border-radius: 0.4rem;
- margin: 0.5rem;
-}
-
-form input[type=submit] {
- background-color: #1fc063;
- color: white;
- height: 3rem;
- font-weight: 700;
-}
-
-form input[type=submit]:hover {
- background-color: #118b44cf;
- cursor: pointer;
-}
-
-form input[type=submit]:active {
- transform: scale(0.95);
-}
-
-.form{
- margin-bottom: 0.8rem;
-}
-.btn:hover {
- background-color: #118b44cf;
-}
-
-.btn:active {
- transform: scale(0.9);
-}
-
-.tasks {
- display: flex;
- margin: auto;
- max-width: 100%;
-
-}
-
-#addTask{
- margin: auto;
- width: 100%;
-}
-
-#tasks {
- display: flex;
- list-style-type: none;
- flex-wrap: wrap;
- gap: 0.8rem;
- padding: 0.5rem;
-}
-
-#tasks li {
- background-color: #bd7325;
- border-radius: 0.4rem;
- padding: 0.5rem;
- font-family: fantasy;
- font-weight: lighter;
- color: white;
- box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.25);
-}
-
-#tasks li:hover {
- background-color: #118b44cf;
- color: white;
- cursor: pointer;
-}
-
-.profile {
- list-style-type: square;
-}
-
-/* Responsive Styles */
-
-@media (max-width: 768px) {
- /* Adjust styles for screens up to 768px */
- .container {
-   padding: 1rem;
- }
-
- .text h3 {
-   font-size: 2rem;
- }
-
- form input[type=submit] {
-   width: 100%;
- }
-}
-
-@media (max-width: 480px) {
- /* Adjust styles for screens up to 480px */
- .navigation nav {
-   flex-direction: column;
-   align-items: center;
- }
-
- nav img {
-   margin-bottom: 1rem;
- }
-
- .btn {
-   width: 100%;
- }
-
- .container {
-   padding: 1.2rem;
- }
-
- .tasks {
-   flex-direction: column;
- }
-
- #addTask{
-  margin: auto;
-  width: 100%;
- }
-form input[type=submit] {
-   width: 100%; 
-}
-
-#taskInput{
- width: unset;
-}
- #tasks li {
-   width: 100%;
- }
- #delete {
-  margin:auto;
-}
+.container .text p {
+  text-align: justify !important;
 }

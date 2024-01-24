@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import {
   getAuth,
-  onAuthStateChanged,
+  onAuthStateChanged,signOut
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 import { getDatabase, push, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
@@ -33,7 +33,8 @@ onAuthStateChanged(auth, (user) => {
 
 
   } else {
-    console.log(8);
+    alert("Please login..")
+    window.location.href="index.html"
   }
 
 
@@ -65,6 +66,9 @@ addTask.addEventListener("click", function (event) {
 // ...
 
 
+// ...
+
+// ...
 
 function fetchData() {
   const userId = auth.currentUser.uid;
@@ -73,55 +77,69 @@ function fetchData() {
     const tasksContainer = document.getElementById("tasks");
     tasksContainer.innerHTML = ""; // Clear existing tasks
 
-    const taskList = Object.values(snapshot.val() || {}); // Retrieve task list or an empty object
+    const taskList = Object.entries(snapshot.val() || {}); // Retrieve task list or an empty object
 
     if (taskList.length === 0) {
       const li = document.createElement("li");
       li.innerText = "No tasks found.";
       tasksContainer.appendChild(li);
     } else {
-      taskList.forEach(task => {
+      taskList.forEach(([taskId, taskValue], index) => {
         const li = document.createElement("li");
-        li.innerText = task;
+        li.className =
+          "list-group-item d-flex justify-content-between align-items-center m-1 border-radius-3";
+        li.innerText = taskValue;
+
+        const closeButton = document.createElement("button");
+        closeButton.type = "button";
+        closeButton.className = "btn-close";
+        closeButton.setAttribute("aria-label", "Close");
+        closeButton.addEventListener("click", function () {
+          // Remove the task from both the DOM and the Firebase Realtime Database
+          deleteTask(taskId);
+        });
+
+        li.appendChild(closeButton);
         tasksContainer.appendChild(li);
       });
     }
   });
 }
 
-// ...
-
-
-
-
-//signout
-const logOut = document.getElementById("signOut");
-logOut.addEventListener("click", function(){
-  signOut(auth).then(() => {
-    // Sign-out successful.
-  }).catch((error) => {
-    // An error happened.
-  });
-})
-
-// Function to delete all tasks in the database
-function deleteAllTasks() {
+// Function to delete a specific task
+function deleteTask(taskId) {
   const user = auth.currentUser;
   if (user) {
     const userId = user.uid;
-    const userTasksRef = ref(database, 'users/' + userId + '/tasks');
-    set(userTasksRef, null)
+    const userTaskRef = ref(database, 'users/' + userId + '/tasks/' + taskId);
+    
+    set(userTaskRef, null)
       .then(function () {
-        console.log("All tasks deleted successfully!");
+        console.log("Task deleted successfully!");
       })
       .catch(function (error) {
-        console.error("Error deleting tasks: ", error);
+        console.error("Error deleting task: ", error);
       });
   }
 }
 
+//signout
+const logOut = document.getElementById("signOut");
+logOut.addEventListener("click", function () {
+  signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+      window.location.href="index.html";
+    })
+    .catch((error) => {
+      // An error happened.
+      alert("Error!")
+    });
+});
+
+
 const erase = document.getElementById("delete");
-erase.addEventListener("click",function(){
+erase.addEventListener("click", function () {
   const user = auth.currentUser;
   if (user) {
     const userId = user.uid;
@@ -134,4 +152,4 @@ erase.addEventListener("click",function(){
         console.error("Error deleting tasks: ", error);
       });
   }
-})
+});

@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import {
   getAuth,
-  createUserWithEmailAndPassword,signInWithEmailAndPassword
+  createUserWithEmailAndPassword,endEmailVerification 
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -16,26 +16,31 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-//input fields
+// Input fields
 const signUp = document.getElementById("signUp");
-signUp.addEventListener("click", function(event) {
+const errorAlert = document.getElementById("logError");
+signUp.addEventListener("click", function (event) {
   event.preventDefault();
   const email = document.getElementById("email").value;
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-  var confirm = document.getElementById("confirm").value;
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  const confirm = document.getElementById("confirm").value;
 
   if (email === "" || username === "" || password === "" || confirm === "") {
     alert("Please fill in all the fields.");
+    return false;
+  } else if (password.length < 6) {
+    alert("Password should be at least 6 characters long.");
     return false;
   } else if (password !== confirm) {
     alert("Password and confirmation don't match.");
     return false;
   } else {
-    createUserWithEmailAndPassword(auth, email, password, username)
+    createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        window.location.href = "/index.html";
+        alert("Account Created..")
+        window.location.href = "/dashboard.html";
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -44,8 +49,10 @@ signUp.addEventListener("click", function(event) {
         errorAlert.innerHTML = errorMessage;
       });
   }
+  
+  sendEmailVerification(auth.currentUser)
+  .then(() => {
+    // Email verification sent!
+    // ...
+  });
 });
-
-
-
-
